@@ -1,25 +1,18 @@
-'use strict'
-
-const express = require('express')
-let app = express()
-var router = require("./routes/index.js")
-var studentRoute = require("./routes/studentRoute.js")
-var teacherRoute = require("./routes/teacherRoute.js")
+var express = require("express")
+var app = express()
 var bodyParser = require('body-parser')
-app.set('view engine', 'ejs')
-
-
+var student = require('./routes/student.js')
+var teacher = require('./routes/teacher.js')
+var subject = require('./routes/subject.js')
 
 app.use(bodyParser.urlencoded({ extended: false }))
+app.set('view engine', 'ejs')
 
+app.use('/student',student)
+app.use('/teacher',teacher)
+app.use('/subject',subject)
 
-
-
-app.use('/',router);
-app.use('/',studentRoute);
-app.use('/',teacherRoute);
-
-
-app.listen(3002,function() {
-	console.log("listenn")
+app.listen(3001,function() {
+	console.log("listen")
 })
+

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Edit Subjects</h1>
+	<p><a href="/subject">Show all subjects</a></p>
+	<form action="/subject/edit/<%= dataSubject.id%>" method="post">
+	  Subject name:<br>
+	  <input type="text" name="subject_name" value="<%= dataSubject.subject_name%>">
+	  <br><br>
+	  <input type="submit" value="edit Subject">
+	</form>
+</body>
+</html>

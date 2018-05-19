@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<h1>Subjects Data</h1>
+<p> <a href ="/subject/add">add Subject</a></p>
+<body >
+<table border = 2x style="width:60%">		
+  <tr>
+  	<th>id</th>		
+    <th>Subject Name</th>
+    <th>Options</th>
+  </tr>
+  <% dataSubjects.forEach(dataSubjects=>{ %>
+  <tr>
+  	<td><%= dataSubjects.id%></td>
+    <td><%= dataSubjects.subject_name%></td>
+    <td><a href = "/subject/edit/<%=dataSubjects.id%>">edit</a> ||<a href="/subject/delete/<%=dataSubjects.id%>" onclick = "return confirm('are you sure want to delete this subject?')"> delete</a> </td>	  
+  </tr>
+  <% }) %>
+</table>
+
+
+</body>
+</html>
