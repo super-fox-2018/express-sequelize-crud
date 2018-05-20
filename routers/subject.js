@@ -7,7 +7,6 @@ router.get('/',(req,res)=>{
     Model
     .getAllData()
     .then(function(subjectData){
-        console.log(subjectData.subject_name)
         res.render('showSubject.pug',{status: 'subject',inputData:subjectData})
     })
     .catch(function(error){
