@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Subject</title>
+</head>
+<body>
+  <h1>Data Subject</h1><br>
+    <table border="1">
+        <tr>
+          <th>Id</th>
+          <th>Subject</th>
+       
+          <th>Options</th>
+    
+        </tr>
+        <% for(let i=0; i<dataSubjects.length; i++){ %>
+            <tr>
+                <th><%= dataSubjects[i].id%></th>
+                <th><%= dataSubjects[i].subject_name%></th>
+    
+                <th><input type='submit' value='delete'></th>
+            </tr>
+        <%}%>
+        <br>
+       <a href='subject/add'> <input type ='submit' value ='add subject'></a>
+</body>
+</html>
