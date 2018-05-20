@@ -6,7 +6,6 @@ const path = require('path');
 const routes = require('./routes');
 const errorHandlers = require('./handlers/errorHandlers');
 
-
 // Set up express app
 const app = express();
 
@@ -26,13 +25,16 @@ app.use(bodyParser.urlencoded({ extended : false }));
 // Setup method override
 app.use(methodOverride('_method'));
 
+// All routes are going to here
 app.use('/', routes);
 
+// Handler if the route is not found
 app.use(errorHandlers.notFound);
 
+// Show Errors to user
 app.use(errorHandlers.showErrors);
 
-
+// Start the server
 const server = app.listen(3000, () => {
   console.log(`🙂  🙂  🙂  Express running on port → ${server.address().port}`);
 });
