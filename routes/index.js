@@ -4,8 +4,8 @@ const Models = require('../models');
 // const Teacher = Models.Teacher;
 
 routes.get('/', (req, res) => {
-  res.send('Hello world')
-  // res.render('index.ejs');
+  // res.send('Hello world')
+  res.render('index.ejs');
 })
 
 module.exports = routes;
