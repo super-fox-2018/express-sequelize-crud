@@ -10,6 +10,7 @@ module.exports = {
       },
       subject_name: {
         type: Sequelize.STRING,
+        allowNull: false,
       },
       createdAt: {
         type: Sequelize.DATE,
