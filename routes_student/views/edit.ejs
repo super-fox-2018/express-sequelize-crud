@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1><%= title %></h1>
+    <form method="POST" action="/edit/student">
+        
+        
+        <% for(att_student in student){ %>
+       
+        
+        <label for="input"><%- att_student %></label>
+        <input type="text" name= <%- att_student %>  value= <%- student[att_student] %> ><br>
+        <% }; %>
+        
+        <input type="submit" value="EDIT">
+    
+    </form>
+</body>
+</html>

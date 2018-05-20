@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> <%= title %> </title>
+    
+    
+</head>
+<body>
+    <h1> <%= title %> </h1>
+    <p><a href= <%= link%> > add data subject</a></p>
+    <table>
+        <thead>
+            <tr>
+                <% thead.forEach(function(item){ %>
+                    
+                        <th>
+                                <%- item %>
+                        </th>
+                        
+                <% }); %>
+                        <th>option</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% subject.forEach(function(user){ %>
+                <tr>
+                    <% for(var value in user){ %>
+                        <td>
+                            <%- user[value] %>
+                        </td>
+                    <% } %>
+                    <td><a href= <%= link_edit + user.id %> > edit </a> | <a href=<%= link_delete + user.id %>>Delete</a></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</body>
+</html>
