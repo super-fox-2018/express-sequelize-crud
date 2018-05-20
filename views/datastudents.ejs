@@ -1,0 +1,62 @@
+<html>
+
+  <head>
+    <title>Students Data</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 80%;
+        align: center;
+        border: 1px solid #ddd;
+      }
+
+      th,
+      td {
+        text-align: left;
+        padding: 16px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 align="center">Students Data</h1>
+    <p align="center"><a href="/students/add">Add Students </a></p>
+    <table align="center" border:1px solid #eee>
+
+      <tr>
+        <th>Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Option</th>
+      </tr>
+      <% for(var i=0; i < students.length; i++) { %>
+
+        <tr>
+          <td>
+            <%= students[i].id %>
+          </td>
+          <td>
+            <%= students[i].first_name %>
+          </td>
+          <td>
+            <%= students[i].last_name %>
+          </td>
+          <td>
+            <%= students[i].email %>
+          </td>
+          <th> <a href="/students/delete/<%=students[i].id%>" onclick="return confirm('Delete this student?')">Delete</a> |
+            <a href="/students/edit/<%=students[i].id%>" onclick="return confirm('Update this student?')">Edit</a></th>
+        </tr>
+        <% } %>
+    </table>
+
+
+  </body>
+
+</html>

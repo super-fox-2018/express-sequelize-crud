@@ -1,0 +1,55 @@
+<html>
+
+  <head>
+    <title>subjects Data</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 80%;
+        align: center;
+        border: 1px solid #ddd;
+      }
+
+      th,
+      td {
+        text-align: left;
+        padding: 16px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 align="center">subjects Data</h1>
+    <p align="center"><a href="/subjects/add">Add subjects </a></p>
+    <table align="center" border:1px solid #eee>
+
+      <tr>
+        <th>id</th>
+        <th>Subject Name</th>
+
+        <th>Option</th>
+      </tr>
+      <% for(var i=0; i < subjects.length; i++) { %>
+
+        <tr>
+          <td>
+            <%= subjects[i].id %>
+          </td>
+          <td>
+            <%= subjects[i].subject_name %>
+          </td>
+          <th> <a href="/subjects/delete/<%=subjects[i].id%>" onclick="return confirm('Delete this student?')">Delete</a> |
+            <a href="/subjects/edit/<%=subjects[i].id%>" onclick="return confirm('Update this student?')">Edit</a></th>
+        </tr>
+        <% } %>
+    </table>
+
+
+  </body>
+
+</html>
