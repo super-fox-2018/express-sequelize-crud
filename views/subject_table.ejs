@@ -1,0 +1,32 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Subject Page</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<h1>Subject Page</h1>
+	<table border=1>
+		<caption>Subject Data</caption>
+		<thead>
+			<a href="/subject/add">add subject</a>
+			<tr>
+				<th>ID</th>
+				<th>subject_name</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% subject.forEach((subject) => { %>
+				<tr>
+					<td><%=subject.id%></td>
+					<td><%=subject.subject_name%></td>
+					<td><a href="/subject/edit/<%= subject.id %>">Edit</a></td>
+					<td><a href="/subject/delete/<%= subject.id%>" onclick="confirm('Are you sure?')">Delete</td>
+				</tr>
+			<% }) %>
+		</tbody>
+	</table>
+	<h3><a href="/home">Back</a></h3>
+</body>
+</html>
