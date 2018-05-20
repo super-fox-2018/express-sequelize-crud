@@ -1,0 +1,11 @@
+extends ./layout.pug
+include mixins/_table
+
+block content
+  h1.title= `${h.beautifyString(tableName)} Data`
+  a(href=`/${tableName}/add` class="main-link")= `Add ${tableName.slice(0, tableName.length-1)}`
+  if records.length > 0
+    +table(tableName, records, h)
+    
+  else
+    p.message= `No ${tableName}, please add a new one`

@@ -1,0 +1,17 @@
+mixin table(tableName, records, h)
+  table.table
+    - const tableSingular = tableName.slice(0, tableName.length-1);
+    tr
+      each val, key in records[0]
+        if key !== 'createdAt' && key !== 'updatedAt'
+          th= h.beautifyString(key)
+      th Options
+    each record in records
+      tr
+        each val, key in record
+          if key !== 'createdAt' && key !== 'updatedAt'
+            td= val
+        td
+          a(class="edit-button" href=`/${tableName}/edit/${record.id}`) Edit
+          form(class="delete-form" action=`/${tableName}/delete/${record.id}?_method=DELETE` method="POST" onsubmit=`return confirm('Delete this ${tableSingular} ?');`)
+            input(class="delete-button" type="submit", value="Delete")

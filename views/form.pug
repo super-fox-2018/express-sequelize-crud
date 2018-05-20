@@ -1,0 +1,15 @@
+extends ./layout.pug
+
+block content
+  - const action = mode === 'Add' ? `/${tableName}/add` : `/${tableName}/edit/${record.id}?_method=PUT`
+  - const table = h.beautifyString(tableName).slice(0, tableName.length-1)
+  h1.title= `${mode} ${table} Data`
+  a(href=`/${tableName}` class="main-link") Show all data
+  form(class="form" action=action, method="POST")
+
+    each column in columns
+      - const type = column === 'email' ? 'email' : 'text';
+      label(class="form-label" for=column)= h.beautifyString(column)
+      input(class="form-input" type=type, name=column value=`${record ? record[column] : ''}` required)
+
+    button(class="form-submit")=`${mode} ${table}`
