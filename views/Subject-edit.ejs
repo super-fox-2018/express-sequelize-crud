@@ -1,0 +1,21 @@
+<DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Subject-edit
+    </title>
+  </head>
+    <body>
+    <h2 style="text-align:center">Edit Your Information: </h2>
+
+    <form action="/subject-edit/<%= subject.id %>" method="post" style="text-align:center">
+      <label> Name: </label>
+      <input type="text" name="subjectName" value="<%=subject.subjectName%>" style="min-width: 150;"><br><br>
+
+      <button type="submit" onclick="alert('Updated Succesfully!')" value="submit">Submit</button>
+      &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+      <button type="button"><a href="/subjects" style="text-decoration:none"> Cancel</a></button>
+		</form>
+
+  </body>
+</html>

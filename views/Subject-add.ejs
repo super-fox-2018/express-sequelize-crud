@@ -1,0 +1,20 @@
+<DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Subject-Add
+    </title>
+  </head>
+  <body>
+    <h1><%= titleSubject %></h1>
+    <div id= "container">
+      <form action="/subject-add" method="post">
+        <label> Name: </label><br>
+        <input type="text" name="subjectName" required style="min-width: 180;"><br><br>
+        <button type="submit" id="submitBtn" value = "submit"> Submit </button>
+      &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;
+        <button type="button"><a href="/subjects" style="text-decoration:none"> Cancel</a></button>
+      </form>
+    </div>
+  </body>
+</html>

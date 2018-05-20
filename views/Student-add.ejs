@@ -1,0 +1,27 @@
+<DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Student-Add
+    </title>
+  </head>
+  <body>
+    <h1><%= titleStudent %></h1>
+    <div id= "container">
+      <form action="/student-add" method="post">
+        <label> First Name: </label><br>
+        <input type="text" name="firstName" style="min-width: 180;" required><br><br>
+
+        <label>Last Name:</label><br>
+        <input type="text" name="lastName" style="min-width: 180;" required><br><br>
+
+        <label>Email:</label><br>
+        <input type="text" name="email" style="min-width: 180;" required><br><br>
+
+        <button type="submit" id="submitBtn" value = "submit"> Submit </button>
+        &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;
+        <button type="button"><a href="/students" style="text-decoration:none"> Cancel</a></button>
+      </form>
+    </div>
+  </body>
+</html>

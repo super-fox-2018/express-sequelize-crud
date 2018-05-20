@@ -1,0 +1,27 @@
+<DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Teachers-edit
+    </title>
+  </head>
+    <body>
+    <h2 style="text-align:center">Edit Your Information: </h2>
+    <form action="/teacher-edit/<%= teacher.id %>" method="post" style="text-align:center">
+      <label> First Name: </label>
+      <input type="text" name="firstName" value="<%=teacher.firstName%>" style="min-width: 150;"><br><br>
+
+      <label> Last Name: </label>
+      <input type="text" name="lastName" value="<%=teacher.lastName%>"style="min-width: 150;"><br><br>
+
+      <label> Email: </label>
+      <input type="text" name="email" value="<%=teacher.email%>" style="min-width: 180px;"><br><br>
+
+      <button type="submit" onclick="alert('Updated Successfully!')" value="submit">Submit</button>
+      &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+      <button type="button"><a href="/teachers" style="text-decoration:none"> Cancel</a></button>
+    </form>
+
+
+  </body>
+</html>
