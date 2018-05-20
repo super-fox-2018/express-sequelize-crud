@@ -13,6 +13,10 @@
 
   <% if (category === 'student') { %>
     <form action="/students/edit/<%= data.id %>" method="post">
+  <% } %>
+  <% if (category === 'teacher') { %>
+    <form action="/teachers/edit/<%= data.id %>" method="post">
+  <% } %>
       <table>
         <tr>
           <td>First name:</td>
@@ -34,6 +38,6 @@
         </tr>
       </table>
     </form>
-  <% } %>
+  
 </body>
 </html>
