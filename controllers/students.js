@@ -4,7 +4,7 @@ const helpers = require('./../helpers');
 const columns = ['first_name', 'last_name', 'email'];
 
 exports.getStudents = (req, res) => {
-  Student.findAll({
+  return Student.findAll({
     order: [['id', 'ASC']],
     raw: true,
   })
@@ -30,13 +30,13 @@ exports.addStudent = (req, res) => {
 
 exports.createStudent = (req, res) => {
   const newStudent = req.body;
-  Student.create(newStudent)
+  return Student.create(newStudent)
     .then(result => res.redirect('/students'));
 }
 
 exports.editStudent = (req, res) => {
   const { studentId } = req.params;
-  Student.findById(studentId, { raw : true })
+  return Student.findById(studentId, { raw : true })
     .then(student => res.render('form', { 
       title: 'Edit Student', 
       mode: 'Edit', 
@@ -50,12 +50,12 @@ exports.editStudent = (req, res) => {
 exports.updateStudent= (req, res) => {
   const { studentId } = req.params;
   const updatedStudent = req.body;
-  Student.update(updatedStudent, { where : { id : studentId }})
+  return Student.update(updatedStudent, { where : { id : studentId }})
     .then(result => res.redirect('/students'));
 }
 
 exports.deleteStudent = (req, res) => {
   const { studentId } = req.params;
-  Student.destroy({ where : { id : studentId }})
+  return Student.destroy({ where : { id : studentId }})
     .then(result => res.redirect('/students'));
 }

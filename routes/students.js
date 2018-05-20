@@ -1,18 +1,19 @@
 const express = require('express');
 const router = express.Router();
 const studentsController = require('./../controllers').students;
+const { catchErrors } = require('./../handlers/errorHandlers');
 
-router.get('', studentsController.getStudents);
+router.get('/', catchErrors(studentsController.getStudents));
 
 router
   .get('/add', studentsController.addStudent)
-  .post('/add', studentsController.createStudent);
+  .post('/add', catchErrors(studentsController.createStudent));
 
 router
-  .get('/edit/:studentId', studentsController.editStudent)
-  .put('/edit/:studentId', studentsController.updateStudent)
+  .get('/edit/:studentId', catchErrors(studentsController.editStudent))
+  .put('/edit/:studentId', catchErrors(studentsController.updateStudent));
 
 router
-  .delete('/delete/:studentId', studentsController.deleteStudent);
+  .delete('/delete/:studentId', catchErrors(studentsController.deleteStudent));
 
 module.exports = router;

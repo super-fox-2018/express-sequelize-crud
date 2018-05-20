@@ -6,13 +6,40 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.route-link,
+.route-link:visited,
+.route-link:active {
+  text-decoration: none;
+  color: #03A9F4;
+}
+
+.error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.error__status {
+  font-weight: 800;
+  font-size: 60px;
+  text-align: center;
+}
+
+.error__message {
+  text-align: center;
+  font-size: 30px;
+}
+
 .title {
   width: 100%;
   text-align: center;
 }
 
 .message {
-  
+  text-align: center;
+  margin: 0 auto;
+  width: 70%;
 }
 
 .main-link,
@@ -102,4 +129,14 @@ body {
   transition: border .2s ease-out;
   backface-visibility: hidden;
   box-shadow: 1px 2px rgba(0, 0, 0, .2);
+}
+
+.home-link,
+.home-link:visited,
+.home-link:active {
+  color: #03A9F4;
+  text-decoration: none;
+  display: block;
+  width: 70%;
+  margin: 20px auto;
 }

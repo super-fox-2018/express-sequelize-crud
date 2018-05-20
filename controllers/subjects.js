@@ -2,7 +2,7 @@ const { Subject } = require('./../models');
 const helpers = require('./../helpers');
 
 exports.getSubjects = (req, res) => {
-  Subject.findAll({
+  return Subject.findAll({
     order: [['id', 'ASC']],
     raw : true
   })
@@ -28,13 +28,13 @@ exports.addSubject = (req, res) => {
 
 exports.createSubject = (req, res) => {
   const newSubject = req.body;
-  Subject.create(newSubject)
+  return Subject.create(newSubject)
     .then(result => res.redirect('/subjects'));
 }
 
 exports.editSubject = (req, res) => {
   const { subjectId } = req.params;
-  Subject.findById(subjectId, { raw : true })
+  return Subject.findById(subjectId, { raw : true })
     .then(subject => res.render('form', { 
       title: 'Edit Subject', 
       mode: 'Edit',
@@ -48,12 +48,12 @@ exports.editSubject = (req, res) => {
 exports.updateSubject= (req, res) => {
   const { subjectId } = req.params;
   const updatedSubject = req.body;
-  Subject.update(updatedSubject, { where : { id : subjectId }})
+  return Subject.update(updatedSubject, { where : { id : subjectId }})
     .then(result => res.redirect('/subjects'));
 }
 
 exports.deleteSubject = (req, res) => {
   const { subjectId } = req.params;
-  Subject.destroy({ where : { id : subjectId }})
+  return Subject.destroy({ where : { id : subjectId }})
     .then(result => res.redirect('/subjects'));
 }

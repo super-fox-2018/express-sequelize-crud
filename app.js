@@ -4,6 +4,8 @@ const methodOverride = require('method-override');
 const logger = require('morgan');
 const path = require('path');
 const routes = require('./routes');
+const errorHandlers = require('./handlers/errorHandlers');
+
 
 // Set up express app
 const app = express();
@@ -25,6 +27,11 @@ app.use(bodyParser.urlencoded({ extended : false }));
 app.use(methodOverride('_method'));
 
 app.use('/', routes);
+
+app.use(errorHandlers.notFound);
+
+app.use(errorHandlers.showErrors);
+
 
 const server = app.listen(3000, () => {
   console.log(`🙂  🙂  🙂  Express running on port → ${server.address().port}`);

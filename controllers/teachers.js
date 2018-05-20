@@ -4,7 +4,7 @@ const helpers = require('./../helpers');
 const columns = ['first_name', 'last_name', 'email'];
 
 exports.getTeachers = (req, res) => {
-  Teacher.findAll({
+  return Teacher.findAll({
     order: [['id', 'ASC']],
     raw : true,
   })
@@ -30,13 +30,13 @@ exports.addTeacher = (req, res) => {
 
 exports.createTeacher = (req, res) => {
   const newTeacher = req.body;
-  Teacher.create(newTeacher)
+  return Teacher.create(newTeacher)
     .then(result => res.redirect('/teachers'));
 }
 
 exports.editTeacher = (req, res) => {
   const { teacherId } = req.params;
-  Teacher.findById(teacherId, { raw : true })
+  return Teacher.findById(teacherId, { raw : true })
     .then(teacher => res.render('form', { 
       title : 'Edit Teacher', 
       mode : 'Edit', 
@@ -50,12 +50,12 @@ exports.editTeacher = (req, res) => {
 exports.updateTeacher = (req, res) => {
   const { teacherId } = req.params;
   const updatedTeacher = req.body;
-  Teacher.update(updatedTeacher, { where : { id : teacherId }})
+  return Teacher.update(updatedTeacher, { where : { id : teacherId }})
     .then(result => res.redirect('/teachers'));
 }
 
 exports.deleteTeacher = (req, res) => {
   const { teacherId } = req.params;
-  Teacher.destroy({ where : { id : teacherId }})
+  return Teacher.destroy({ where : { id : teacherId }})
     .then(result => res.redirect('/teachers'));
 }

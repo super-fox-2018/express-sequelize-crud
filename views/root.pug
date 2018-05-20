@@ -1,0 +1,37 @@
+extends ./layout.pug
+
+block content
+  h1 School Site
+  
+  .routes
+    h2 
+      a(class="route-link" href="/students") Students Route
+    ul
+      li GET /students (menampilkan semua data student)
+      li GET /students/add (menampilkan form input student)
+      li POST /students/add (menghandle input dari form)
+      li GET /students/edit/:studentId (menampilkan form data student berdasarkan id)
+      li PUT /students/edit/:studentId (menghandle input dari form untuk update student)
+      li DELETE /students/delete/:studentId (mendelete data student berdasarkan id)
+
+    h2 
+      a(class="route-link" href="/subjects") Subjects Route
+    ul
+      li GET /subjects (menampilkan semua data subject)
+      li GET /subjects/add (menampilkan form input subject)
+      li POST /subjects/add (menghandle input dari form)
+      li GET /subjects/edit/:subjectId (menampilkan form data subject berdasarkan id)
+      li PUT /subjects/edit/:subjectId (menghandle input dari form untuk update subject)
+      li DELETE /subjects/delete/:subjectId (mendelete data subject berdasarkan id)
+    
+    h2 
+      a(class="route-link" href="/teachers") Teachers Route
+    ul
+      li GET /teachers (menampilkan semua data teacher)
+      li GET /teachers/add (menampilkan form input teacher)
+      li POST /teachers/add (menghandle input dari form)
+      li GET /teachers/edit/:teacherId (menampilkan form data teacher berdasarkan id)
+      li PUT /teachers/edit/:teacherId (menghandle input dari form untuk update teacher)
+      li DELETE /teachers/delete/:teacherId (mendelete data teacher berdasarkan id)
+
+  
