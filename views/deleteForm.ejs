@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Delete data: <%= category %></title>
+</head>
+<body>
+  <% if (msg) { %>
+    <h3> <%= msg %> </h3>
+  <% } %>
+
+  <% if (category === 'student') { %>
+    <form action="/students/delete/<%= data.id %>" method="post">
+  <% } %>
+  <% if (category === 'teacher') { %>
+    <form action="/teachers/delete/<%= data.id %>" method="post">
+  <% } %>
+      <table>
+        <tr>
+          <td>First name:</td>
+          <td><%= data.first_name %></td>
+        </tr>
+        <tr>
+          <td>Last name:</td>
+          <td><%= data.last_name %></td>
+        </tr>
+        <tr>
+          <td>Email:</td>
+          <td><%= data.email %></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <input type="submit" value="Delete Data">
+          </td>
+        </tr>
+      </table>
+    </form>
+  
+</body>
+</html>

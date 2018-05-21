@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Input form: <%= category %></title>
+</head>
+<body>
+  <% if (msg) { %>
+    <h3> <%= msg %> </h3>
+  <% } %>
+
+  <% if (category === 'student') { %>
+    <form action="/students/add" method="post">
+  <% } %>
+  <% if (category === 'teacher') { %>
+    <form action="/teachers/add" method="post">
+  <% } %>
+      <table>
+        <tr>
+          <td>First name:</td>
+          <td><input type="text" name="firstName" id="firstName"></td>
+        </tr>
+        <tr>
+          <td>Last name:</td>
+          <td><input type="text" name="lastName" id="lastName"></td>
+        </tr>
+        <tr>
+          <td>Email:</td>
+          <td><input type="text" name="email" id="email"></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <input type="submit" value="Submit Data">
+          </td>
+        </tr>
+      </table>
+    </form>
+  
+</body>
+</html>
