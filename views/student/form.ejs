@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Student Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <h2>Student Form</h2>
+    <h3>Fill the form to register new Student</h3>
+    <div>
+        <form action="/student/add" method="post">
+            First Name: <input type="text" name="firstName"><br><br>
+            Last Name: <input type="text" name="lastName"><br><br>
+            Email: <input type="text" name="email"><br><br>
+            <button type="submit" onclick="alert('Succesfully registered')" value="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>

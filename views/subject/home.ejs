@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Subject Name</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>Subject Page</h1>
+    <table border=1>
+        <caption>Our Subjects Information</caption>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Subject Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% subjects.forEach((subject) => { %>
+                <tr>
+                    <td><%=subject.id%></td>
+                    <td><%=subject.subjectName%></td>
+                    <td><a href="/subject/edit/<%= subject.id %>">Edit</a></td>
+                    <td><a href="/subject/delete/<%= subject.id%>" onclick="confirm('Are you sure?')">Delete</td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+    <h3><a href="/subject/add">Add new subject</a></h3>
+    <h3><a href="/">Back</a></h3>
+</body>
+</html>
