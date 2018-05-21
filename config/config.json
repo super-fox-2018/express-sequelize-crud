@@ -2,7 +2,7 @@
   "development": {
     "username": "postgres",
     "password": "postgres",
-    "database": "express_sequelize_pg",
+    "database": "sqlize-one-to-many",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }
